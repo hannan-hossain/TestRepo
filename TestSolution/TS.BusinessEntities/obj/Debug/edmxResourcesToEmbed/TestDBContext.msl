@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="carshippingreviewsModelStoreContainer" CdmEntityContainer="carshippingreviewsconnection">
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="carshippingreviewsModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="companyID" ColumnName="companyID" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="licensing" ColumnName="licensing" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone2" ColumnName="phone2" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="StarRatting" ColumnName="StarRatting" />
+          <ScalarProperty Name="NoOfReviews" ColumnName="NoOfReviews" />
+          <ScalarProperty Name="SlugCompanyName" ColumnName="SlugCompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Leads">
+      <EntityTypeMapping TypeName="carshippingreviewsModel.Lead">
+        <MappingFragment StoreEntitySet="Leads">
+          <ScalarProperty Name="leadId" ColumnName="leadId" />
+          <ScalarProperty Name="uniqueKey" ColumnName="uniqueKey" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="pu_city" ColumnName="pu_city" />
+          <ScalarProperty Name="pu_state" ColumnName="pu_state" />
+          <ScalarProperty Name="de_city" ColumnName="de_city" />
+          <ScalarProperty Name="de_state" ColumnName="de_state" />
+          <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+          <ScalarProperty Name="moveDate" ColumnName="moveDate" />
+          <ScalarProperty Name="unsubscribed" ColumnName="unsubscribed" />
+          <ScalarProperty Name="leftReview" ColumnName="leftReview" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="carshippingreviewsModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="reviewId" ColumnName="reviewId" />
+          <ScalarProperty Name="companyId" ColumnName="companyId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="pu_city" ColumnName="pu_city" />
+          <ScalarProperty Name="pu_state" ColumnName="pu_state" />
+          <ScalarProperty Name="de_city" ColumnName="de_city" />
+          <ScalarProperty Name="de_state" ColumnName="de_state" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+          <ScalarProperty Name="emailConfirmed" ColumnName="emailConfirmed" />
+          <ScalarProperty Name="review1" ColumnName="review" />
+          <ScalarProperty Name="uniqueKey" ColumnName="uniqueKey" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="adminModerated" ColumnName="adminModerated" />
+          <ScalarProperty Name="adminApproved" ColumnName="adminApproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="carshippingreviewsModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

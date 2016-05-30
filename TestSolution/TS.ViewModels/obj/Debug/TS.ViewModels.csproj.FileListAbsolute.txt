@@ -1,0 +1,4 @@
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ViewModels\bin\Debug\TS.ViewModels.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ViewModels\bin\Debug\TS.ViewModels.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ViewModels\obj\Debug\TS.ViewModels.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ViewModels\obj\Debug\TS.ViewModels.pdb

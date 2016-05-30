@@ -1,0 +1,7 @@
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\bin\Debug\TS.Services.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\bin\Debug\TS.Services.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\obj\Debug\TS.Services.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\obj\Debug\TS.Services.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\obj\Debug\TS.Services.csprojResolveAssemblyReference.cache
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\bin\Debug\TS.ServiceInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Services\bin\Debug\TS.ServiceInterfaces.pdb

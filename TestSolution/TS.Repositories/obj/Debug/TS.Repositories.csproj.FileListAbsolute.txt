@@ -1,0 +1,16 @@
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.Repositories.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.Repositories.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\obj\Debug\TS.Repositories.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\obj\Debug\TS.Repositories.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.Repositories.dll.config
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\EntityFramework.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\MySql.Data.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\MySql.Data.Entity.EF6.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\EntityFramework.xml
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\obj\Debug\TS.Repositories.csprojResolveAssemblyReference.cache
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.RepositoryInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.RepositoryInterfaces.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.BusinessEntities.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.Repositories\bin\Debug\TS.BusinessEntities.pdb

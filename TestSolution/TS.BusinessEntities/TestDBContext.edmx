@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="carshippingreviewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="website" Type="nvarchar" MaxLength="100" />
+          <Property Name="licensing" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="255" />
+          <Property Name="phone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="companyName" Type="nvarchar" MaxLength="255" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="dateCreated" Type="datetime" />
+          <Property Name="dateModified" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="StarRatting" Type="float" Nullable="false" />
+          <Property Name="NoOfReviews" Type="int" Nullable="false" />
+          <Property Name="SlugCompanyName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Leads">
+          <Key>
+            <PropertyRef Name="leadId" />
+          </Key>
+          <Property Name="leadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uniqueKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="make" Type="nvarchar" MaxLength="50" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="year" Type="nchar" MaxLength="10" />
+          <Property Name="pu_city" Type="nvarchar" MaxLength="100" />
+          <Property Name="pu_state" Type="nchar" MaxLength="10" />
+          <Property Name="de_city" Type="nvarchar" MaxLength="100" />
+          <Property Name="de_state" Type="nchar" MaxLength="10" />
+          <Property Name="dateAdded" Type="date" />
+          <Property Name="moveDate" Type="date" />
+          <Property Name="unsubscribed" Type="smallint" Nullable="false" />
+          <Property Name="leftReview" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reviews">
+          <Key>
+            <PropertyRef Name="reviewId" />
+          </Key>
+          <Property Name="reviewId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="companyId" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="quoteId" Type="nvarchar" MaxLength="50" />
+          <Property Name="cost" Type="int" />
+          <Property Name="pu_city" Type="nvarchar" MaxLength="100" />
+          <Property Name="pu_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="de_city" Type="nvarchar" MaxLength="100" />
+          <Property Name="de_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="rating" Type="int" />
+          <Property Name="summary" Type="nvarchar" MaxLength="255" />
+          <Property Name="emailConfirmed" Type="bit" />
+          <Property Name="review" Type="ntext" />
+          <Property Name="uniqueKey" Type="uniqueidentifier" />
+          <Property Name="year" Type="nvarchar" MaxLength="50" />
+          <Property Name="make" Type="nvarchar" MaxLength="50" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="adminModerated" Type="bit" />
+          <Property Name="adminApproved" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="56" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Reviews_Companies">
+          <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="companyID" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="companyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="carshippingreviewsModelStoreContainer">
+          <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leads" EntityType="Self.Leads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Reviews_Companies" Association="Self.FK_Reviews_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="carshippingreviewsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="companyID" />
+          </Key>
+          <Property Name="companyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="website" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="licensing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="companyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dateCreated" Type="DateTime" Precision="3" />
+          <Property Name="dateModified" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="StarRatting" Type="Double" Nullable="false" />
+          <Property Name="NoOfReviews" Type="Int32" Nullable="false" />
+          <Property Name="SlugCompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reviews" Relationship="Self.FK_Reviews_Companies" FromRole="Companies" ToRole="Reviews" />
+        </EntityType>
+        <EntityType Name="Lead">
+          <Key>
+            <PropertyRef Name="leadId" />
+          </Key>
+          <Property Name="leadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uniqueKey" Type="Guid" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="pu_city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pu_state" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="de_city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="de_state" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="dateAdded" Type="DateTime" Precision="0" />
+          <Property Name="moveDate" Type="DateTime" Precision="0" />
+          <Property Name="unsubscribed" Type="Int16" Nullable="false" />
+          <Property Name="leftReview" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="reviewId" />
+          </Key>
+          <Property Name="reviewId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="companyId" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="quoteId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cost" Type="Int32" />
+          <Property Name="pu_city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pu_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="de_city" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="de_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="rating" Type="Int32" />
+          <Property Name="summary" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="emailConfirmed" Type="Boolean" />
+          <Property Name="review1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="uniqueKey" Type="Guid" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="make" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Precision="3" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="adminModerated" Type="Boolean" />
+          <Property Name="adminApproved" Type="Boolean" />
+          <NavigationProperty Name="Company" Relationship="Self.FK_Reviews_Companies" FromRole="Reviews" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_Reviews_Companies">
+          <End Role="Companies" Type="Self.Company" Multiplicity="1" />
+          <End Role="Reviews" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="companyID" />
+            </Principal>
+            <Dependent Role="Reviews">
+              <PropertyRef Name="companyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="carshippingreviewsconnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Leads" EntityType="Self.Lead" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Reviews_Companies" Association="Self.FK_Reviews_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Reviews" EntitySet="Reviews" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="carshippingreviewsModelStoreContainer" CdmEntityContainer="carshippingreviewsconnection">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="carshippingreviewsModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="companyID" ColumnName="companyID" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="licensing" ColumnName="licensing" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone2" ColumnName="phone2" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="dateModified" ColumnName="dateModified" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="StarRatting" ColumnName="StarRatting" />
+                <ScalarProperty Name="NoOfReviews" ColumnName="NoOfReviews" />
+                <ScalarProperty Name="SlugCompanyName" ColumnName="SlugCompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leads">
+            <EntityTypeMapping TypeName="carshippingreviewsModel.Lead">
+              <MappingFragment StoreEntitySet="Leads">
+                <ScalarProperty Name="leadId" ColumnName="leadId" />
+                <ScalarProperty Name="uniqueKey" ColumnName="uniqueKey" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="pu_city" ColumnName="pu_city" />
+                <ScalarProperty Name="pu_state" ColumnName="pu_state" />
+                <ScalarProperty Name="de_city" ColumnName="de_city" />
+                <ScalarProperty Name="de_state" ColumnName="de_state" />
+                <ScalarProperty Name="dateAdded" ColumnName="dateAdded" />
+                <ScalarProperty Name="moveDate" ColumnName="moveDate" />
+                <ScalarProperty Name="unsubscribed" ColumnName="unsubscribed" />
+                <ScalarProperty Name="leftReview" ColumnName="leftReview" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="carshippingreviewsModel.Review">
+              <MappingFragment StoreEntitySet="Reviews">
+                <ScalarProperty Name="reviewId" ColumnName="reviewId" />
+                <ScalarProperty Name="companyId" ColumnName="companyId" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="quoteId" ColumnName="quoteId" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="pu_city" ColumnName="pu_city" />
+                <ScalarProperty Name="pu_state" ColumnName="pu_state" />
+                <ScalarProperty Name="de_city" ColumnName="de_city" />
+                <ScalarProperty Name="de_state" ColumnName="de_state" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="summary" ColumnName="summary" />
+                <ScalarProperty Name="emailConfirmed" ColumnName="emailConfirmed" />
+                <ScalarProperty Name="review1" ColumnName="review" />
+                <ScalarProperty Name="uniqueKey" ColumnName="uniqueKey" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="make" ColumnName="make" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="adminModerated" ColumnName="adminModerated" />
+                <ScalarProperty Name="adminApproved" ColumnName="adminApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="carshippingreviewsModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

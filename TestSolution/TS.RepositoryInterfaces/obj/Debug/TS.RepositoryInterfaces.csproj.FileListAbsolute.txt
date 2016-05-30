@@ -1,0 +1,4 @@
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.RepositoryInterfaces\bin\Debug\TS.RepositoryInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.RepositoryInterfaces\bin\Debug\TS.RepositoryInterfaces.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.RepositoryInterfaces\obj\Debug\TS.RepositoryInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.RepositoryInterfaces\obj\Debug\TS.RepositoryInterfaces.pdb

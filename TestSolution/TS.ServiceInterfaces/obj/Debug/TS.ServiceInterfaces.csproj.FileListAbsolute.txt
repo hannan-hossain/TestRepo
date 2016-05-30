@@ -1,0 +1,4 @@
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ServiceInterfaces\bin\Debug\TS.ServiceInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ServiceInterfaces\bin\Debug\TS.ServiceInterfaces.pdb
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ServiceInterfaces\obj\Debug\TS.ServiceInterfaces.dll
+c:\users\hannan\documents\visual studio 2013\Projects\TestSolution\TS.ServiceInterfaces\obj\Debug\TS.ServiceInterfaces.pdb
