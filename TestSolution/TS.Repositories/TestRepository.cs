@@ -13,6 +13,8 @@ namespace TS.Repositories
         public GenericRepository<carshippingreviewsconnection> GenericRepositoryInstance { get; set; }
         public void Test() {
             GenericRepositoryInstance = new GenericRepository<carshippingreviewsconnection>();
+            List<Review> reviews =  GenericRepositoryInstance.Context.Reviews.Where(t => (bool) t.adminApproved).ToList();
+            int i = reviews.Count;
         }
     }
 }

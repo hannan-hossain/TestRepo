@@ -27,7 +27,7 @@ namespace TS.BusinessEntities
         public Nullable<int> rating { get; set; }
         public string summary { get; set; }
         public Nullable<bool> emailConfirmed { get; set; }
-        public string review1 { get; set; }
+        public string review { get; set; }
         public Nullable<System.Guid> uniqueKey { get; set; }
         public string year { get; set; }
         public string make { get; set; }
